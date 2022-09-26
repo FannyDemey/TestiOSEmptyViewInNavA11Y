@@ -14,7 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: Text("Second View"), isActive: $isShowingDetailView) { EmptyView() }.accessibilityHidden(true)
+                NavigationLink(
+                    destination: Text("Second View"),
+                    isActive: $isShowingDetailView ){
+                    EmptyView()
+                }.accessibilityHidden(true)
 
                 Button("Tap to show detail") {
                     isShowingDetailView = true
